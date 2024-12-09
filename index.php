@@ -68,8 +68,8 @@ JOIN
                 <td><?=$item['product_name']?></td>
                 <td><?=$item['datetime']?></td>
                 <td><?=$item['Quantity']?></td>
-                <td><a href="">Удалить</a></td>
-                <td><a href="">Изменить</a></td>
+                <td><a href="action/DeleteEntrance.php">Удалить</a></td>
+                <td><a href="EditEntrance.php">Изменить</a></td>
             </tr>
             <?php endforeach;?>
         </table>
