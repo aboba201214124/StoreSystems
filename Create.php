@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="ru">
 <head>
@@ -8,6 +9,11 @@
     <title>Document</title>
 </head>
 <body>
-
+<h1>Добавить товар</h1>
+    <form action="action/Store.php" method="post">
+        <input type="text" name="name">
+        <input type="number" name="price">
+        <input type="submit">
+    </form>
 </body>
 </html>
