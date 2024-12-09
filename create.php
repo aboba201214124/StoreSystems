@@ -7,14 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<style>
-    a{
-        margin: 20px;
-    }
-</style>
 <body>
-<a href="create.php">Список товаров</a>
-<a href="">Добавить товар в базу</a>
-<a href="">Добавить информацию о поступлении товара</a>
+
 </body>
 </html>
