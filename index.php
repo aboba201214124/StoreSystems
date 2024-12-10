@@ -1,6 +1,6 @@
 <?php
 /** @var PDO $pdo */
-$pdo = require_once $_SERVER['DOCUMENT_ROOT'] . '/db.php';
+$pdo = require_once $_SERVER['DOCUMENT_ROOT'] . '/StoreSystems/db.php';
 
 $products = $pdo -> query("SELECT * FROM product")->fetchAll();
 $entrance = $pdo -> query("SELECT 
@@ -20,27 +20,9 @@ JOIN
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style/index.css">
     <title>Document</title>
 </head>
-<style>
-    a{
-        margin: 20px;
-    }
-    body{
-        display: grid;
-        grid-template-areas: "a a"
-                            "b c";
-    }
-    .links{
-        grid-area: a;
-    }
-    .product{
-        grid-area: b;
-    }
-    .entrance{
-        grid-area: c;
-    }
-</style>
 <body>
 <div class="links">
 <a href="Create.php">Добавить товар в базу</a>
@@ -48,6 +30,7 @@ JOIN
 </div>
 <div class="product">
     <h1>Товар</h1>
+    <p id="asd">asd</p>
 <?php foreach($products as $item):?>
     <div class="card">
         <h1><?=$item['name']?></h1>
