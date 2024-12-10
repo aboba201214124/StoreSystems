@@ -13,7 +13,7 @@
     <form action="action/Store.php" method="post">
         <input type="text" name="name">
         <input type="number" name="price">
-        <input type="submit">
+        <input type="submit" name="submit">
     </form>
 </body>
 </html>

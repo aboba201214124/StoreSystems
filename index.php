@@ -2,7 +2,18 @@
 /** @var PDO $pdo */
 $pdo = require_once $_SERVER['DOCUMENT_ROOT'] . '/StoreSystems/db.php';
 
-$products = $pdo -> query("SELECT * FROM product")->fetchAll();
+$products = $pdo -> query("SELECT 
+    p.article, 
+    p.name, 
+    p.price, 
+    SUM(e.Quantity) AS total_quantity
+FROM 
+    product p
+LEFT JOIN 
+    entrance e ON p.article = e.product_id
+GROUP BY 
+    p.article, p.name, p.price;
+")->fetchAll();
 $entrance = $pdo -> query("SELECT 
     entrance.id, 
     product.name AS product_name, 
@@ -25,16 +36,19 @@ JOIN
 </head>
 <body>
 <div class="links">
-<a href="Create.php">Добавить товар в базу</a>
-<a href="CreateEntrance.php">Добавить информацию о поступлении товара</a>
+<a href="Create.php" id="addproduct">Добавить товар в базу</a>
+<a href="CreateEntrance.php" id="addentrance">Добавить информацию о поступлении товара</a>
 </div>
 <div class="product">
     <h1>Товар</h1>
-    <p id="asd">asd</p>
 <?php foreach($products as $item):?>
     <div class="card">
         <h1><?=$item['name']?></h1>
+        <p>Артикул:<?=$item['article']?></p>
         <p>Цена: <?= $item['price']?>.р</p>
+        <p>В наличии: <?= $item['total_quantity']?>/кг</p>
+        <a href="action/delete.php?id=<?=$item['article']?>" id="deleteproduct">Удалить</a>
+        <a href="edit.php?id=<?=$item['article']?>" id="editproduct">Изменить</a>
     </div>
 <?php endforeach;?>
 </div>
@@ -51,8 +65,7 @@ JOIN
                 <td><?=$item['product_name']?></td>
                 <td><?=$item['datetime']?></td>
                 <td><?=$item['Quantity']?></td>
-                <td><a href="action/DeleteEntrance.php">Удалить</a></td>
-                <td><a href="EditEntrance.php">Изменить</a></td>
+                <td><a href="action/DeleteEntrance.php?id=<?=$item['id']?>" id="deleteentrance">Удалить</a></td>
             </tr>
             <?php endforeach;?>
         </table>

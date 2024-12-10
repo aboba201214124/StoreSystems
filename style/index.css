@@ -1,0 +1,23 @@
+a {
+	margin: 20px;
+}
+body {
+	display: grid;
+	grid-template-areas:
+		'a a'
+		'b c';
+}
+.links {
+	grid-area: a;
+	width: 100%;
+}
+.links a {
+	text-decoration: none;
+    color: black;
+}
+.product {
+	grid-area: b;
+}
+.entrance {
+	grid-area: c;
+}

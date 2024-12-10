@@ -1,6 +1,6 @@
 <?php
 /** @var PDO $pdo */
-$pdo = require_once $_SERVER['DOCUMENT_ROOT'] . '/db.php';
+$pdo = require_once $_SERVER['DOCUMENT_ROOT'] . '/StoreSystems/db.php';
 
 $products = $pdo -> query("SELECT * FROM product")->fetchAll();
 ?>
@@ -25,7 +25,7 @@ $products = $pdo -> query("SELECT * FROM product")->fetchAll();
     <input type="date" name="date">
     <label for="">Сколько товара пришло??(в килограммах)</label>
     <input type="number" name="quantity">
-    <input type="submit" value="Отправить">
+    <input type="submit" value="Отправить" name="submit">
 </form>
 </body>
 </html>
