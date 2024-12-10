@@ -5,6 +5,6 @@ $product = $_POST['product'];
 $date = $_POST['date'];
 $quantity = $_POST['quantity'];
 
-$pdo ->query("INSERT INTO entrance (product_id, datetime, quantity) values ('$product', '$date', '$quantity')");
+$pdo->query("INSERT INTO entrance (product_id, datetime, quantity) values ('$product', '$date', '$quantity')");
 
 header("Location:/StoreSystems");

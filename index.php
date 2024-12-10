@@ -45,8 +45,8 @@ JOIN
     <div class="card">
         <h1><?=$item['name']?></h1>
         <p>Артикул:<?=$item['article']?></p>
-        <p>Цена: <?= $item['price']?>.р</p>
-        <p>В наличии: <?= $item['total_quantity']?>/кг</p>
+        <p>Цена: <?=$item['price']?>.р</p>
+        <p>В наличии: <?=$item['total_quantity']?>/кг</p>
         <a href="action/delete.php?id=<?=$item['article']?>" id="deleteproduct">Удалить</a>
         <a href="edit.php?id=<?=$item['article']?>" id="editproduct">Изменить</a>
     </div>

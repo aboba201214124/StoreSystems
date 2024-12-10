@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Хост: database:3306
--- Время создания: Дек 09 2024 г., 06:32
--- Версия сервера: 8.4.0
--- Версия PHP: 8.2.10
+-- Хост: MySQL-8.2
+-- Время создания: Дек 10 2024 г., 15:44
+-- Версия сервера: 8.2.0
+-- Версия PHP: 8.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `docker`
+-- База данных: `kvest`
 --
 
 -- --------------------------------------------------------
@@ -33,14 +33,6 @@ CREATE TABLE `entrance` (
   `datetime` date NOT NULL,
   `Quantity` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Дамп данных таблицы `entrance`
---
-
-INSERT INTO `entrance` (`id`, `product_id`, `datetime`, `Quantity`) VALUES
-(1, 2, '2024-12-09', 2578),
-(2, 2, '2024-12-09', 25);
 
 -- --------------------------------------------------------
 
@@ -59,8 +51,7 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`article`, `name`, `price`) VALUES
-(1, 'dsfdasf', 5000),
-(2, 'Кабачок', 1000);
+(15, 'Баклажан', 100);
 
 --
 -- Индексы сохранённых таблиц
@@ -87,13 +78,13 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT для таблицы `entrance`
 --
 ALTER TABLE `entrance`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT для таблицы `product`
 --
 ALTER TABLE `product`
-  MODIFY `article` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `article` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
