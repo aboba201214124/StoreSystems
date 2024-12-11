@@ -3,9 +3,7 @@
 $pdo = require_once $_SERVER['DOCUMENT_ROOT'] . '/StoreSystems/db.php';
 
 $products = $pdo -> query("SELECT 
-    p.article, 
-    p.name, 
-    p.price, 
+    p.*, 
     SUM(e.Quantity) AS total_quantity
 FROM 
     product p
